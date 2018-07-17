@@ -25,7 +25,7 @@ Histograms of the number of steps by day:
 
 ```r
 stepsbyday <- aggregate(cleandata$steps, by = list(date=cleandata$date), FUN = sum)
-plot(stepsbyday$date, stepsbyday$x, type = "h", xlab = "Date", ylab = "Number of steps")
+hist(stepsbyday$x, xlab = "Number of steps by day", main = "Number of steps by day")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
@@ -85,7 +85,7 @@ Checking new data:
 
 ```r
 newstepsbyday <- aggregate(newdata$steps, by = list(date=newdata$date), FUN = sum)
-plot(newstepsbyday$date, newstepsbyday$x, type = "h", xlab = "Date", ylab = "Number of steps")
+hist(newstepsbyday$x, xlab = "Number of steps by day", main = "Number of steps by day (filled NA's)")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->

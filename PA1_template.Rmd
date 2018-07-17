@@ -23,7 +23,7 @@ Sys.setlocale("LC_ALL", "en_GB.UTF-8")
 Histograms of the number of steps by day:
 ```{r}
 stepsbyday <- aggregate(cleandata$steps, by = list(date=cleandata$date), FUN = sum)
-plot(stepsbyday$date, stepsbyday$x, type = "h", xlab = "Date", ylab = "Number of steps")
+hist(stepsbyday$x, xlab = "Number of steps by day", main = "Number of steps by day")
 meansteps <- mean(stepsbyday$x)
 mediansteps <- median(stepsbyday$x)
 ```
@@ -62,7 +62,7 @@ newdata$x <- NULL
 Checking new data:
 ```{r}
 newstepsbyday <- aggregate(newdata$steps, by = list(date=newdata$date), FUN = sum)
-plot(newstepsbyday$date, newstepsbyday$x, type = "h", xlab = "Date", ylab = "Number of steps")
+hist(newstepsbyday$x, xlab = "Number of steps by day", main = "Number of steps by day (filled NA's)")
 newmeansteps <- mean(newstepsbyday$x)
 newmediansteps <- median(newstepsbyday$x)
 ```
